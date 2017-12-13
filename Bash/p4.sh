@@ -15,9 +15,11 @@ if [ -d "$dirname" ]; then  #Check if the directory already exists.
 else 
     echo "The directory '$dirname' does not exist. Do you want to create it?";
     read option;
-    if [[ $option == y* || $option == Y* ]]; then  #Using wildcards as the user might enter "yo" for "yes".
+    if [[ $option == y* || $option == Y* ]]; then           #Using wildcards as the user might enter "yo" for "yes".
         if mkdir "$dirname"; then
             echo "Successfully created the directory!";
         fi
+    else 
+        echo "Bye!";
     fi
 fi
