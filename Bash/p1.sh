@@ -5,4 +5,6 @@ if [ -f $1 ]; then
     echo "It is a file.";
 elif [ -d $1 ]; then  
     echo "It is a directory.";
+else 
+    echo "It is neither a file nor a directory.";
 fi
