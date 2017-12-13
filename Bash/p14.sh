@@ -11,7 +11,7 @@ flag=1;
 
 if [[ -d "$dirname" ]]; then
     
-    cd "$dirname";
+    cd "$dirname";  #Moving to the desired directory to check whether the file exists over there or not.
 
     for i in *
     do
