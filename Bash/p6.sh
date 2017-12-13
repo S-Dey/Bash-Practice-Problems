@@ -5,17 +5,22 @@ countfiles=0;
 countdirs=0;
 
 #Changing directory and checking if it exists.
+if [ -d "$1" ]; then
+    cd "$1";
 
+    for files in *
+    do 
+        if [ -f "$files" ]; then
+            ((countfiles++));
+        fi
 
-for files in *
-do 
-    if [ -f "$files" ]; then
-        ((countfiles++));
-    fi
+        if [ -d "$files" ]; then
+            ((countdirs++));
+        fi
+    done
 
-    if [ -d "$files" ]; then
-        ((countdirs++));
-    fi
-done
+    printf "In the directory '$1', number of:\n    files = %d, and\n    directories = %d\n" "$countfiles" "$countdirs";
+else 
+    echo "The directory does not exist. Make sure to create it first with command 'mkdir'.";
 
-printf "Number of:\n    Files = %d\n    Directories = %d\n" "$countfiles" "$countdirs";
+fi
