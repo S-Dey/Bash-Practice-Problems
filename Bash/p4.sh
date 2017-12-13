@@ -17,7 +17,9 @@ else
     read option;
     if [[ $option == y* || $option == Y* ]]; then           #Using wildcards as the user might enter "yo" for "yes".
         if mkdir "$dirname"; then
-            echo "Successfully created the directory!";
+            cd "$dirname";
+            touch "$filename";
+            echo "Successfully created the directory and created the file '$filename' inside it!";
         fi
     else 
         echo "Bye!";
