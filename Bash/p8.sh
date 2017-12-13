@@ -9,7 +9,7 @@ read y;
 
 while ((x>y))
 do
-    echo $x;
+    echo "$x";
     ((x--));
 done
 
