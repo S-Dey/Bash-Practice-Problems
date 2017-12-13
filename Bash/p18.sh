@@ -1,11 +1,10 @@
 #!/bin/bash
 #P18: To check whether a number is odd or even
 
-echo "Enter any number: ";
-read x;
+read -p "Enter any number: " x;
 
 
-if [[ $x % 2 -eq 0 ]]
+if ((x%2 == 0))		#Otherwise, we can also do [[ $((x%2)) == 0 ]].
 then 
 	echo "It is even.";
 else 
